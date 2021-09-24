@@ -1,0 +1,463 @@
+* {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    list-style: none;
+}
+
+body {
+    position: relative;
+}
+
+main > header, section, nav, .info {
+    max-width: 1090px;
+    width: 70%;
+    margin: auto;
+}
+
+section, footer {
+    margin-top: 10%;
+}
+
+main h1, .section-1 h1, .section-2 h1, .section-2 h2 {
+    font-family: 'Josefin Sans', sans-serif;
+    font-weight: 300;
+}
+
+button, p, a {
+    font-family: 'Alata', sans-serif;
+    font-weight: 400;
+}
+
+.buttons button, a {
+    border: none;
+    background: none;
+    color: hsl(0, 0%, 100%);
+}
+
+
+.mobile-img {
+    display: none;
+    width: 100%;
+}
+
+
+
+/* ----navigation---- */
+nav {
+    position: fixed;
+    display: flex;
+    grid-template-columns: 40% 60%;
+    padding-top: 90px;
+    left: 50%;
+    transform: translate(-50%);
+    z-index: 3;
+}
+
+nav ul {
+    display: flex;
+    width: 300px;
+    margin: auto 0 auto auto;
+}
+
+nav li {
+    margin-left: 4%;
+}
+
+nav li:hover {
+    border-bottom: 2px solid hsl(0, 0%, 100%);
+}
+
+/* --mobile menu-- */
+#check, .checkbtn {
+    display: none;
+}
+
+.checkbtn {
+    cursor: pointer;
+}
+.close {
+    display: none;
+}
+
+#check:checked ~ .nav-sections li {
+    display: block;
+}
+#check:checked ~ .checkbtn .close {
+    display: block;
+}
+#check:checked ~ .checkbtn .menu {
+    display: none;
+}
+
+/* --nav bg-- */
+.nav-bg {
+    background-color: hsl(0, 0%, 0%);
+    position: fixed;
+    width: 100%;
+    height: 140px;
+    z-index: 1;
+}
+
+
+
+/* ----main (hero section)---- */
+main {
+    background-image: url(images/desktop/image-hero.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    padding: 270px 0 170px;
+    position: relative;
+    z-index: 2;
+}
+
+main h1 {
+    font-size: 42px;
+    color: hsl(0, 0%, 100%);
+    width: 340px;
+    border: hsl(0, 0%, 100%) solid 1px;
+    padding: 24px;
+}
+
+
+
+/* ----section 1---- */
+.section-1 {
+    position: relative;
+}
+
+.section-1 > img {
+    max-width: 731px;
+    width: 100%;
+}
+
+/* --header-- */
+.section-1 > header {
+    background-color: hsl(0, 0%, 100%);
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 360px;
+    padding: 120px 0 0 100px;
+}
+
+.section-1 h1 {
+    font-size: 38px;
+    margin-bottom: 20px;
+}
+
+.section-1 p {
+    font-size: 12px;
+    color: hsl(0, 0%, 55%);
+}
+
+
+
+/* ----section 2---- */
+/* --content-- */
+.section-2 h1 {
+    display: inline-block;
+    margin-bottom: 5%;
+    font-size: 38px;
+}
+
+.section-2 button {
+    background-color: hsl(0, 0%, 100%);
+    float: right;
+    border: 1px hsl(0, 0%, 41%) solid;
+    padding: 0.5% 3%;
+}
+
+.section-2 button:hover {
+    background-color: hsl(0, 0%, 0%);
+    color: hsl(0, 0%, 100%);
+}
+
+/* --creations-- */
+.creations {
+    display: grid;
+    grid-template-columns: repeat(4, 23.5%);
+    column-gap: 2%;
+    row-gap: 2%;
+}
+
+.creation {
+    position: relative;
+}
+
+.creation:hover::after {
+    content: url();
+    background: hsla(0, 0%, 100%, 0.7);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    mix-blend-mode: lighten;
+}
+
+.creation img {
+    width: 100%;
+}
+
+.creation h2 {
+    color: hsl(0, 0%, 100%);
+    position: absolute;
+    bottom: 0;
+    margin: 0 15% 15%;
+}
+
+
+
+
+/* ----footer---- */
+footer {
+    background-color: hsl(0, 0%, 0%);
+    padding: 2% 0;
+}
+
+.info {
+    display: grid;
+    grid-template-columns: repeat(2, 49.5%);
+    column-gap: 1%;
+    row-gap: 2%;
+}
+
+.logo {
+    width: 160px;
+}
+
+.icons {
+    width: 144px;
+    justify-self: right;
+}
+
+.icons img {
+    width: 23px;
+    margin-left: 10px;
+}
+
+.icons img:hover {
+    padding-bottom: 5px;
+    border-bottom: 1px solid hsl(0, 0%, 100%);
+}
+
+footer button {
+    margin-right: 2%;
+}
+
+footer button:hover {
+    border-bottom: 1px solid hsl(0, 0%, 100%);
+}
+
+footer p {
+    color: hsl(0, 0%, 55%);
+    font-size: 15px;
+    justify-self: right;
+}
+
+
+
+
+
+/* ---------------Smaller screens--------------- */
+@media (max-width: 1360px) {
+    /* ----section 1---- */
+    /* --header-- */
+    .section-1 > header {
+        padding: 55px 0 0 35px;
+    }
+}
+
+@media (max-width: 1045px) {
+    .buttons button {
+        font-size: 12px;
+    }
+
+    /* ----navigation---- */
+    .nav-position img {
+        width: 172px;
+    }
+    .nav-bar .buttons {
+        width: 275px;
+    }
+
+    /* ----main (hero section)---- */
+    main {
+        padding: 200px 0 100px;
+    }
+    main h1 {
+        font-size: 34px;
+        width: 250px;
+    }
+
+    /* ----section 1---- */
+    /* --header-- */
+    .section-1 > header {
+        padding: 50px 0 0 30px;
+        width: 300px;
+    }
+    .section-1 h1 {
+        font-size: 30px;
+    }
+    
+    /* ----section 2---- */
+    /* --content-- */
+    .section-2 h1 {
+        font-size: 30px;
+    }
+    /* --creations-- */
+    .creation h2 {
+        font-size: 20px;
+        margin: 0 7.5% 7.5%;
+    }
+    
+    /* ----footer---- */
+    .logo {
+        width: 120px;
+    }
+    .icons img {
+        width: 17px;
+    }
+    footer p {
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 960px) {
+    .nav-bar .buttons {
+        width: 240px;
+    }
+    .nav-bar button {
+        margin-left: 2%;
+    }
+    /* ----section 1---- */
+    /* --header-- */
+    .section-1 > header {
+        position: static;
+        width: 490px;
+        margin: 4% auto 0;
+        padding: 0;
+        text-align: center;
+    }
+    .section-1 h1 {
+        margin-bottom: 1.5%;
+    }
+    .section-1 p {
+        font-size: 15px;
+    }
+}
+
+@media (max-width: 740px) {
+    .desktop-img {
+        display: none;
+    }
+    .mobile-img {
+        display: block;
+    }
+
+    .nav-bar .buttons {
+        display: none;
+        flex-direction: column;
+        width: 50px;
+    }
+
+    /* ----navigation---- */
+    .nav-sections {
+        flex-direction: column;
+    }
+    nav > img {
+        z-index: 3;
+    }
+    
+    /* --nav-sections-- */
+    .checkbtn {
+        display: block;
+        margin: auto 0 auto auto;
+        z-index: 3;
+    }
+    nav ul {
+        font-size: 34px;
+        position: absolute;
+        background-color: hsl(0, 0%, 0%);
+        width: 145%;
+        top: 0;
+        left: -22%;
+        z-index: 2;
+    }
+    nav li {
+        display: none;
+        margin-left: 15%;
+        margin-bottom: 20px;
+    }
+    nav li:first-child {
+        margin-top: 240px;
+    }
+    nav li:last-child {
+        margin-bottom: 100vh;
+    }
+    a {
+        font-family: 'Josefin Sans', sans-serif;
+        color: hsl(0, 0%, 100%);
+        font-weight: 300;
+    }
+    
+    /* ----section 1---- */
+    /* --header-- */
+    .section-1 > header {
+        width: 280px;
+    }
+
+    /* ----section 2---- */
+    /* --content-- */
+    .section-2 h1 {
+        text-align: center;
+    }
+    .content-s2 {
+        display: grid;
+    }
+    .section-2 button {
+        margin: 18% auto 0;
+        width: 120px;
+    }
+    /* --creations-- */
+    .creations {
+        grid-template-columns: 1fr;
+        row-gap: 0.5%;
+        grid-row: 2;
+    }
+
+    /* ----footer---- */
+    footer {
+        padding: 7.5% 0;
+    }
+    .info {
+        grid-template-columns: 1fr;
+    }
+    .logo, .icons, footer .buttons, footer p {
+        justify-self: center;
+        margin-bottom: 2%;
+    }
+    .icons {
+        width: 120px;
+    }
+    .icons img {
+        width: 15px;
+    }
+    footer .buttons {
+        width: 60px;
+        text-align: center;
+        grid-row: 2;
+    }
+    footer button {
+        margin-bottom: 4%;
+    }
+}
+
+@media (max-width: 480px) {
+    /* ----main---- */
+    main {
+        background-image: url(images/mobile/image-hero.jpg);
+    }
+}
